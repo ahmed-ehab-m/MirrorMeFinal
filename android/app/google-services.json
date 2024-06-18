@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "679857001785",
+    "project_id": "mirorr-me-3",
+    "storage_bucket": "mirorr-me-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679857001785:android:fab7bc0356d5a2511d44e8",
+        "android_client_info": {
+          "package_name": "com.example.mirror_me_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUEMv5wJYdAuyfvfuYDe8qR29o-_xj0hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
