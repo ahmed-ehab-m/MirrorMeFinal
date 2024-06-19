@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mirror_me_app/constants.dart';
 import 'package:mirror_me_app/models/product.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 import 'package:mirror_me_app/screens/prodcut_page.dart';
@@ -102,7 +103,12 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firestore Search'),
+        centerTitle: true,
+        title: Text(
+          'Search',
+          style: TextStyle(
+              fontSize: 22, color: kPrimaryColor, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Column(
         children: [
@@ -110,13 +116,41 @@ class _SearchPageState extends State<SearchPage> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: _searchController,
+              // decoration: InputDecoration(
+              //   labelText: 'Search',
+              //   suffixIcon: IconButton(
+              //     icon: Icon(Icons.search),
+              //     onPressed: () {
+              //       _searchProducts(_searchController.text);
+              //     },
+              //   ),
+              // ),
               decoration: InputDecoration(
                 labelText: 'Search',
+                labelStyle: TextStyle(
+                  color:
+                      const Color(0xff5555550).withOpacity(0.59), //<-- SEE HERE
+                ),
+                fillColor: const Color(0xffD9D9D9).withOpacity(0.1),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(
+                    Icons.search,
+                    color: kPrimaryColor,
+                  ),
                   onPressed: () {
                     _searchProducts(_searchController.text);
                   },
+                ),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                constraints: BoxConstraints(minHeight: 57),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide(
+                    color: const Color(0xffD9D9D9).withOpacity(0.1),
+                  ),
                 ),
               ),
               onChanged: (text) {
@@ -150,27 +184,37 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
           ),
-          if (_recentSearches.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Recent Searches:', style: TextStyle(fontWeight: FontWeight.bold)),
-                  for (String search in _recentSearches)
-                    GestureDetector(
-                      onTap: () {
-                        _searchController.text = search;
-                        _searchProducts(search);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0),
-                        child: Text(search),
-                      ),
-                    ),
-                ],
-              ),
-            ),
+          // if (_recentSearches.isNotEmpty)
+          //   Padding(
+          //     padding: const EdgeInsets.all(16.0),
+          //     child: Row(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         Column(
+          //           mainAxisSize: MainAxisSize.min,
+          //           crossAxisAlignment: CrossAxisAlignment.start,
+          //           // mainAxisAlignment: MainAxisAlignment.start,
+          //           children: [
+          //             Text('Recent Searches:',
+          //                 style: TextStyle(
+          //                     fontWeight: FontWeight.bold,
+          //                     color: kPrimaryColor)),
+          //             for (String search in _recentSearches)
+          //               GestureDetector(
+          //                 onTap: () {
+          //                   _searchController.text = search;
+          //                   _searchProducts(search);
+          //                 },
+          //                 child: Padding(
+          //                   padding: const EdgeInsets.symmetric(vertical: 4.0),
+          //                   child: Text(search),
+          //                 ),
+          //               ),
+          //           ],
+          //         ),
+          //       ],
+          //     ),
+          //   ),
         ],
       ),
     );

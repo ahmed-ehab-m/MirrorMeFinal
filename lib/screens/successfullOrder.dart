@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mirror_me_app/colors/color.dart';
+import 'package:mirror_me_app/constants.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 import 'package:mirror_me_app/providers/my_order_provider.dart';
 import 'package:mirror_me_app/screens/myOrder.dart';
@@ -55,21 +56,30 @@ class _SuccussfulOrderState extends State<SuccussfulOrder> {
                   height: 300, child: Image.asset('images/succesfulll.jpg')),
               Text(
                 'Success!',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    color: kPrimaryColor),
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
                 'Your order is done successfully!',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                    color: kPrimaryColor),
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
                 'Thanks For Your Order',
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                    color: kPrimaryColor),
               ),
               SizedBox(
                 height: 50,

@@ -123,9 +123,9 @@ class _MyOrderState extends State<MyOrder> {
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.bold),
                               ),
-                              Text(
-                                totalprice.toString(),
-                              ),
+                              Text('\$190'
+                                  // totalprice.toString(),
+                                  ),
                             ],
                           ),
                         ],
@@ -150,7 +150,10 @@ class _MyOrderState extends State<MyOrder> {
                   Image.asset('images/emptyorders.jpg'),
                   Text(
                     'You haven\'t placed any orders yet',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: kPrimaryColor),
                   )
                 ],
               ),

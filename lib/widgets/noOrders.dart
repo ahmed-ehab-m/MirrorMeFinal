@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirror_me_app/constants.dart';
 import 'package:mirror_me_app/screens/signin.dart';
 
 class NoOrder extends StatelessWidget {
@@ -32,7 +33,10 @@ class NoOrder extends StatelessWidget {
             Image.asset('images/noOrders.jpeg'),
             Text(
               'You haven\'t placed any orders yet',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: kPrimaryColor),
             )
           ],
         ),

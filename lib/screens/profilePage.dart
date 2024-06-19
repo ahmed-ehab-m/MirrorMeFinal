@@ -83,13 +83,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
-                            onTap: _uploadImage,
+                            // onTap: _uploadImage,
                             child: Center(
                               child: CircleAvatar(
-                                backgroundImage: _imageUrl.isNotEmpty
-                                    ? FileImage(File(_imageUrl))
-                                    : AssetImage('images/profilePic.jpeg')
-                                        as ImageProvider,
+                                backgroundImage: AssetImage('images/jj.jpg'),
+                                // _imageUrl.isNotEmpty
+                                //     ? FileImage(File(_imageUrl))
+                                //     : AssetImage('images/3_4.jpg')
+                                //         as ImageProvider,
                                 radius: 50,
                               ),
                             ),

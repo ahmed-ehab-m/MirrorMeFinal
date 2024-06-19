@@ -322,7 +322,7 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           children: [
             SizedBox(
-              width: 10,
+              width: 5,
             ),
             Image.asset('images/jimmy1.jpg'),
             SizedBox(
@@ -452,6 +452,85 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(vertical: 15),
+              //   child: StreamBuilder<QuerySnapshot>(
+              //     stream: FirebaseFirestore.instance
+              //         .collection('features')
+              //         .snapshots(),
+              //     builder: (context, snapshot) {
+              //       if (!snapshot.hasData) {
+              //         return Center(
+              //           child: CircularProgressIndicator(),
+              //         );
+              //       }
+              //       List<DocumentSnapshot> docs = snapshot.data!.docs;
+              //       return Container(
+              //         height: 30,
+              //         width: 500,
+              //         child: ListView.builder(
+              //           clipBehavior: Clip.none,
+              //           scrollDirection: Axis.horizontal,
+              //           // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              //           //   crossAxisCount: 2,
+              //           //   mainAxisExtent: 280,
+              //           //   crossAxisSpacing: 5,
+              //           //   mainAxisSpacing: 10,
+              //           // ),
+              //           shrinkWrap: true,
+              //           // reverse: true,
+              //           // physics: AlwaysScrollableScrollPhysics(),
+              //           // physics: NeverScrollableScrollPhysics(),
+              //           itemCount: docs.length,
+              //           itemBuilder: (context, index) {
+              //             Map<String, dynamic> data =
+              //                 docs[index].data() as Map<String, dynamic>;
+              //             return GestureDetector(
+              //               onTap: () {
+              //                 Navigator.pushNamed(context, pageRoutes[index]);
+              //               },
+              //               child: Padding(
+              //                 padding:
+              //                     const EdgeInsets.symmetric(horizontal: 5),
+              //                 child: Container(
+              //                   decoration: BoxDecoration(
+              //                     color: Color.fromARGB(255, 233, 229, 229),
+              //                     borderRadius: BorderRadius.circular(10),
+              //                   ),
+              //                   height: 15,
+              //                   width: 130,
+              //                   child: Center(
+              //                     child: Row(
+              //                       mainAxisSize: MainAxisSize.min,
+              //                       children: [
+              //                         Image.network(
+              //                           data['image'],
+              //                           height: 20,
+              //                           width: 20,
+              //                         ),
+              //                         SizedBox(
+              //                           width: 2,
+              //                         ),
+              //                         Text(
+              //                           data['name'],
+              //                           style: TextStyle(
+              //                             fontSize: 10,
+              //                             color: kPrimaryColor,
+              //                             fontWeight: FontWeight.bold,
+              //                           ),
+              //                         ),
+              //                       ],
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ),
+              //             );
+              //           },
+              //         ),
+              //       );
+              //     },
+              //   ),
+              // ),
               StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
                     .collection('features')
@@ -485,13 +564,13 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Image.network(
                               data['image'],
-                              height: 250,
+                              height: 230,
                               width: 250,
                             ),
                             Text(
                               data['name'],
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.bold,
                               ),

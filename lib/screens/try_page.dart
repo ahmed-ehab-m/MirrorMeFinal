@@ -21,6 +21,13 @@ class _TryPageState extends State<TryPage> {
         ),
         backgroundColor: Colors.white,
       ),
+      body: Center(
+        child: Image.asset(
+          'images/model555.jpeg',
+          height: 5000,
+          width: 2000,
+        ),
+      ),
     );
   }
 }

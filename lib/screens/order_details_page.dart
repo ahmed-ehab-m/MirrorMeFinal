@@ -98,7 +98,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                 Text(
                   userAddress!,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ],
