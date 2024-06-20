@@ -32,6 +32,7 @@ import 'package:mirror_me_app/screens/six.dart';
 import 'package:mirror_me_app/screens/splash.dart';
 import 'package:mirror_me_app/screens/successfullOrder.dart';
 import 'package:mirror_me_app/screens/three.dart';
+import 'package:mirror_me_app/screens/try_page.dart';
 import 'package:mirror_me_app/screens/two.dart';
 import 'package:provider/provider.dart';
 

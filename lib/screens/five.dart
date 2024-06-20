@@ -17,24 +17,24 @@ class _FivePageState extends State<FivePage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
-            'LongShirts',
+            'T-shirt Collection',
             style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w500,
                 color: Color(0xff0A2472)),
           ),
           centerTitle: true,
-          leading: InkWell(
-            child: Image.asset('images/itemsPage/Arrow - Left.png'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          // leading: InkWell(
+          //   child: Image.asset('images/itemsPage/Arrow - Left.png'),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
           backgroundColor: Colors.white,
         ),
         body: StreamBuilder<QuerySnapshot>(
           stream:
-              FirebaseFirestore.instance.collection('tshirtone').snapshots(),
+              FirebaseFirestore.instance.collection('tshirtthree').snapshots(),
           builder: (context, snapshot) {
             if (snapshot.hasData && snapshot.data != null) {
               List<Productone> products = [];
@@ -46,7 +46,7 @@ class _FivePageState extends State<FivePage> {
                   image: doc['image'],
                   Adress: '',
                   phone: '',
-                  username: '', 
+                  username: '',
                   // amount: 0,
                 ));
               });
@@ -54,9 +54,9 @@ class _FivePageState extends State<FivePage> {
                   clipBehavior: Clip.none,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.8,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 70,
+                    childAspectRatio: 1,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 1,
                   ),
                   itemCount: products.length,
                   itemBuilder: (context, index) {

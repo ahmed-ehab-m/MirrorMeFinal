@@ -30,17 +30,18 @@ class _TwoPageState extends State<TwoPage> {
                 color: Color(0xff0A2472)),
           ),
           centerTitle: true,
-          leading: InkWell(
-            child: Image.asset('images/itemsPage/Arrow - Left.png'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          // leading: InkWell(
+          //   child: Image.asset('images/itemsPage/Arrow - Left.png'),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
           backgroundColor: Colors.white,
         ),
         body: StreamBuilder<QuerySnapshot>(
-          stream:
-              FirebaseFirestore.instance.collection('dressescollection').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection('dressescollection')
+              .snapshots(),
           builder: (context, snapshot) {
             if (snapshot.hasData && snapshot.data != null) {
               List<Productone> products = [];
@@ -50,14 +51,14 @@ class _TwoPageState extends State<TwoPage> {
                   name: doc['name'],
                   price: doc['price'],
                   image: doc['image'], Adress: '', phone: '', username: '',
-                  // amount: 0, 
+                  // amount: 0,
                 ));
               });
               return GridView.builder(
                   clipBehavior: Clip.none,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.8,
+                    childAspectRatio: 1,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 1,
                   ),
@@ -168,17 +169,6 @@ class _TwoPageState extends State<TwoPage> {
 //       washingInstructions: 'Machine wash cold'),
 // ];
 
-
-
-
-
-
-
-
-
-
-
-
 /*StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('tshirtone').snapshots(),
         builder: (context, snapshot) {
@@ -259,4 +249,4 @@ class _TwoPageState extends State<TwoPage> {
             ),
           );
         },
-      ),*/ 
+      ),*/

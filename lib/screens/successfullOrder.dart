@@ -30,8 +30,9 @@ class _SuccussfulOrderState extends State<SuccussfulOrder> {
     // final String image = orderData['image'] as String;
     // final String? name = orderData?['name'] as String?;
     // final String? price = orderData?['price'] as String?;
+    final int? quantity = orderData?['quantity'] as int?;
 
-    final int? totalprice = orderData?['totalprice'] as int?;
+    final double? totalprice = orderData?['total'] as double?;
     productList = provider.productList;
 
     return Scaffold(
@@ -96,6 +97,8 @@ class _SuccussfulOrderState extends State<SuccussfulOrder> {
                       'username': username,
                       'phonNo': phoneNo,
                       'userAdress': userAddress,
+                      'total': totalprice,
+                      'quantity': quantity
                     });
                   },
                   style: ButtonStyle(

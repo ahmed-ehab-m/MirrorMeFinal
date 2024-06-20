@@ -45,12 +45,12 @@ class _PaymentPageState extends State<PaymentPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: InkWell(
-          child: Image.asset('images/itemsPage/Arrow - Left.png'),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
+        // leading: InkWell(
+        //   child: Image.asset('images/itemsPage/Arrow - Left.png'),
+        //   onTap: () {
+        //     Navigator.pop(context);
+        //   },
+        // ),
         title: const Text(
           'User Details',
           style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.w500),

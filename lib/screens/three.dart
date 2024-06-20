@@ -24,12 +24,12 @@ class _ThreePageState extends State<ThreePage> {
                 color: Color(0xff0A2472)),
           ),
           centerTitle: true,
-          leading: InkWell(
-            child: Image.asset('images/itemsPage/Arrow - Left.png'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          // leading: InkWell(
+          //   child: Image.asset('images/itemsPage/Arrow - Left.png'),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
           backgroundColor: Colors.white,
         ),
         body: StreamBuilder<QuerySnapshot>(
@@ -46,7 +46,7 @@ class _ThreePageState extends State<ThreePage> {
                   image: doc['image'],
                   Adress: '',
                   phone: '',
-                  username: '', 
+                  username: '',
                   // amount: 0,
                 ));
               });
@@ -54,7 +54,7 @@ class _ThreePageState extends State<ThreePage> {
                   clipBehavior: Clip.none,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.8,
+                    childAspectRatio: 1,
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 1,
                   ),

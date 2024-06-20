@@ -12,7 +12,6 @@ import '../constants.dart';
 class CustomCard extends StatefulWidget {
   CustomCard({super.key, required this.product});
   final Productone product;
-  
 
   @override
   State<CustomCard> createState() => _CustomCardState();
@@ -78,7 +77,9 @@ class _CustomCardState extends State<CustomCard> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: ((context) => ProdcutPage(p1: widget.product,)),
+            builder: ((context) => ProdcutPage(
+                  p1: widget.product,
+                )),
           ),
         );
       },

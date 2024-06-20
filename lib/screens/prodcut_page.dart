@@ -87,10 +87,11 @@ class _ProdcutPageState extends State<ProdcutPage> {
       'red': Colors.red,
     };
     final List<String> models = [
+      'images/model66.png',
       'images/model1.jpg',
       'images/model2.jpg',
       'images/model3.jpg',
-      'images/model4.jpg',
+      'images/model4.jpg'
     ];
     return Scaffold(
         backgroundColor: Color(0xfff6f6f6),
@@ -382,7 +383,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                                     Expanded(
                                                       child: Container(
                                                         child: GridView.builder(
-                                                          itemCount: 4,
+                                                          itemCount: 5,
                                                           gridDelegate:
                                                               SliverGridDelegateWithFixedCrossAxisCount(
                                                             crossAxisCount: 2,

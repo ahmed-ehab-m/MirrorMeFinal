@@ -38,16 +38,16 @@ class _MyOrderState extends State<MyOrder> {
 
     // final String? resultColor = productdata?['resultColor'] as String?;
     // final String? resultSize = productdata?['resultSize'] as String?;
+    final int? quantity = orderData?['quantity'] as int?;
 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // leading: InkWell(
-        //   child: Image.asset('images/itemsPage/Arrow - Left.png'),
-        //   onTap: () {
-        //     Navigator.pushNamed(context,MainPage.id);
-        //   },
-        // ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back)),
         title: Text(
           'My Orders',
           style:
@@ -123,9 +123,25 @@ class _MyOrderState extends State<MyOrder> {
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.bold),
                               ),
-                              Text('\$190'
-                                  // totalprice.toString(),
-                                  ),
+                              Text(
+                                totalprice.toString(),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Amount:  ',
+                                style: TextStyle(
+                                    color: kPrimaryColor,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                quantity.toString(),
+                              ),
                             ],
                           ),
                         ],
