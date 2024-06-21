@@ -6,20 +6,20 @@ class Productone {
   final String name;
   final int price;
   final String phone;
-  final String username;  
-  final String id; 
-//  int  amount  ;
+  final String username;
+  final String id;
+  int? amount;
 
-  Productone(
-      {required this.name,
-      required this.price,
-      required this.image,
-      required this.id, 
-      required this.Adress , 
-        required this.phone ,
-          required this.username,  
-          // required this.amount ,  
-                        });
+  Productone({
+    required this.name,
+    required this.price,
+    required this.image,
+    required this.id,
+    required this.Adress,
+    required this.phone,
+    required this.username,
+    this.amount,
+  });
 
   factory Productone.fromMap(Map<String, dynamic> map) {
     return Productone(
@@ -29,8 +29,8 @@ class Productone {
       id: map['id'],
       Adress: map['Adress'],
       phone: map['phone'],
-      username: map['username'], 
-      // amount: map['amount'] , 
+      username: map['username'],
+      amount: map['amount'],
     );
   }
 }

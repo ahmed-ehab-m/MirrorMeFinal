@@ -37,6 +37,27 @@ class MyOrderProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  void deleteDocumentById(String id) async {
+    await FirebaseFirestore.instance.collection('orders').doc(id).delete();
+  }
+
+  void removeItem(int index, final listkey) async {
+    final removedItem = productList[index];
+    if (productList.contains(removedItem)) {
+      productList.removeAt(index);
+      deleteDocumentById(removedItem.id); // حذف العنصر من Firestore
+      listkey.currentState!.removeItem(
+        index,
+        (context, animation) => ListItemWidget(
+          product: removedItem,
+          animation: animation,
+          onclick: () {},
+        ),
+      );
+    }
+    notifyListeners();
+  }
 }
 
 // import 'package:cloud_firestore/cloud_firestore.dart';
@@ -113,3 +134,4 @@ class MyOrderProvider extends ChangeNotifier {
 // }
 
 // }
+

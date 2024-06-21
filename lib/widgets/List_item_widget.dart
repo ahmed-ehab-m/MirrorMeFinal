@@ -180,19 +180,19 @@ import 'package:mirror_me_app/constants.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 
 class ListItemWidget extends StatefulWidget {
-  ListItemWidget({
-    super.key,
-    required this.product,
-    required this.animation,
-    required this.onclick,
-    this.amount,
-  }) {}
+  ListItemWidget(
+      {super.key,
+      required this.product,
+      required this.animation,
+      required this.onclick,
+      this.amount,
+      this.totalPrice}) {}
 
   Productone product;
   final Animation<double> animation;
   final VoidCallback? onclick;
   int? amount;
-
+  double? totalPrice;
   @override
   State<ListItemWidget> createState() => _ListItemWidgetState();
 }
@@ -243,15 +243,23 @@ class _ListItemWidgetState extends State<ListItemWidget> {
                     color: kPrimaryColor,
                     fontWeight: FontWeight.bold),
               ),
+              widget.totalPrice == null
+                  ? Text(
+                      r'$' '${widget.product.price}',
+                      style: const TextStyle(
+                          fontSize: 15,
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.w400),
+                    )
+                  : Text(
+                      r'$' '${widget.totalPrice}',
+                      style: const TextStyle(
+                          fontSize: 15,
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.w400),
+                    ),
               Text(
-                r'$' '${widget.product.price}',
-                style: const TextStyle(
-                    fontSize: 15,
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w400),
-              ),
-              Text(
-                'Amount : ${widget.amount}',
+                'Amount : ${widget.product.amount}',
                 style: const TextStyle(
                     fontSize: 15,
                     color: kPrimaryColor,

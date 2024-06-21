@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mirror_me_app/constants.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 import 'package:mirror_me_app/providers/my_order_provider.dart';
+import 'package:mirror_me_app/widgets/List_item_widget.dart';
 import 'package:provider/provider.dart';
 
 class MyOrder extends StatefulWidget {
@@ -13,6 +14,8 @@ class MyOrder extends StatefulWidget {
 }
 
 class _MyOrderState extends State<MyOrder> {
+  final listkey = GlobalKey<AnimatedListState>();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -57,107 +60,122 @@ class _MyOrderState extends State<MyOrder> {
         backgroundColor: Colors.white,
       ),
       body: provider.getproduct.length != 0
-          ? ListView.separated(
-              separatorBuilder: (context, index) => SizedBox(
-                    height: 5,
-                  ),
-              itemCount: provider.getproduct.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.all(15),
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.grey[300],
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                              20), // تعديل انحناء الزوايا هنا
-                          border: Border.all(
-                            color: Colors.white, // لون الحدود
-                            width: 0.5, // سمك الحدود
-                          ),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.network(
-                            provider.getproduct[index].image,
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                'Product Name:  ',
-                                style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                provider.getproduct[index].name,
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                'Price:  ',
-                                style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                totalprice.toString(),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                'Amount:  ',
-                                style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                quantity.toString(),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      //         IconButton(
-                      // onPressed: provider.removeItem(index, listkey);
-                      // icon: Icon(
-                      //   Icons.delete,
-                      //   size: 32,
-                      //   color: kPrimaryColor,
-                      // )),
-                    ],
-                  ),
-                );
-              })
+          ? AnimatedList(
+              key: listkey,
+              initialItemCount: productlist.length,
+              itemBuilder: (context, index, animation) => ListItemWidget(
+                product: productlist[index],
+                animation: animation,
+                onclick: () {
+                  provider.removeItem(index, listkey);
+                },
+                amount: quantity,
+                totalPrice: totalprice,
+              ),
+            )
+          // ListView.separated(
+          //     separatorBuilder: (context, index) => SizedBox(
+          //           height: 5,
+          //         ),
+          //     itemCount: provider.getproduct.length,
+          //     itemBuilder: (context, index) {
+          //       return
+          // return ListItemWidget(product: provider.getproduct[index], animation: animation, onclick: onclick)
+          // return Container(
+          //   margin: const EdgeInsets.all(15),
+          //   padding: EdgeInsets.all(8),
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(20),
+          //     color: Colors.grey[300],
+          //   ),
+          //   child: Row(
+          //     children: [
+          //       Container(
+          //         width: 100,
+          //         height: 100,
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.circular(
+          //               20), // تعديل انحناء الزوايا هنا
+          //           border: Border.all(
+          //             color: Colors.white, // لون الحدود
+          //             width: 0.5, // سمك الحدود
+          //           ),
+          //         ),
+          //         child: ClipRRect(
+          //           borderRadius: BorderRadius.circular(20),
+          //           child: Image.network(
+          //             provider.getproduct[index].image,
+          //             width: 100,
+          //             height: 100,
+          //             fit: BoxFit.cover,
+          //           ),
+          //         ),
+          //       ),
+          //       SizedBox(
+          //         width: 20,
+          //       ),
+          //       Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Row(
+          //             children: [
+          //               Text(
+          //                 'Product Name:  ',
+          //                 style: TextStyle(
+          //                     color: kPrimaryColor,
+          //                     fontWeight: FontWeight.bold),
+          //               ),
+          //               Text(
+          //                 provider.getproduct[index].name,
+          //               ),
+          //             ],
+          //           ),
+          //           SizedBox(
+          //             height: 10,
+          //           ),
+          //           Row(
+          //             children: [
+          //               Text(
+          //                 'Price:  ',
+          //                 style: TextStyle(
+          //                     color: kPrimaryColor,
+          //                     fontWeight: FontWeight.bold),
+          //               ),
+          //               Text(
+          //                 totalprice.toString(),
+          //               ),
+          //             ],
+          //           ),
+          //           SizedBox(
+          //             height: 10,
+          //           ),
+          //           Row(
+          //             children: [
+          //               Text(
+          //                 'Amount:  ',
+          //                 style: TextStyle(
+          //                     color: kPrimaryColor,
+          //                     fontWeight: FontWeight.bold),
+          //               ),
+          //               Text(
+          //                 quantity.toString(),
+          //               ),
+          //             ],
+          //           ),
+          //         ],
+          //       ),
+          //       Spacer(),
+          //       //         IconButton(
+          //       // onPressed: provider.removeItem(index, listkey);
+          //       // icon: Icon(
+          //       //   Icons.delete,
+          //       //   size: 32,
+          //       //   color: kPrimaryColor,
+          //       // )),
+          //     ],
+          //   ),
+          // );
+          // })
           : Padding(
               padding: EdgeInsets.only(top: 40),
               child: Column(

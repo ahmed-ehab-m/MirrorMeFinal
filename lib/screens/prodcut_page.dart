@@ -265,6 +265,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                     quantity -= 1;
                                     if (quantity <= 0) {
                                       quantity = 1;
+                                      widget.p1.amount = quantity;
                                     }
 
                                     //  widget.p1.amount=ProdcutPage.quantity ;
@@ -282,6 +283,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                 onPressed: () {
                                   setState(() {
                                     quantity += 1;
+                                    widget.p1.amount = quantity;
                                   });
                                 },
                                 icon: const Icon(Icons.add),
@@ -320,7 +322,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                               // 'image': image,
                                               // 'name': name,
                                               // 'price': price,
-                                              'quantity': quantity,
+                                              'quantity': widget.p1.amount,
                                               'resultColor': resultColor,
                                               'resultSize': resultSize,
                                               'productone': widget.p1,
