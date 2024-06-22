@@ -185,59 +185,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 const SizedBox(
                   height: 40,
                 ),
-                // Text(
-                //   'Payment Method',
-                //   style: TextStyle(
-                //       color: kPrimaryColor,
-                //       fontSize: 25,
-                //       fontWeight: FontWeight.w500),
-                // ),
-                // SizedBox(
-                //   width: 300,
-                //   child: ListTile(
-                //     tileColor: const Color(0xffD9D9D9).withOpacity(0.3),
-                //     title: IntrinsicHeight(
-                //       child: Row(
-                //         children: [
-                //           Icon(
-                //             CupertinoIcons.creditcard_fill,
-                //             color: kPrimaryColor,
-                //           ),
-                //           SizedBox(
-                //             width: 10,
-                //           ),
-                //           VerticalDivider(
-                //             thickness: 1,
-                //             width: 10,
-                //             color: Colors.black,
-                //           ),
-                //           SizedBox(
-                //             width: 10,
-                //           ),
-                //           Text(
-                //             'Credit Card',
-                //             style: TextStyle(
-                //                 fontWeight: FontWeight.bold, fontSize: 20),
-                //           ),
-                //         ],
-                //       ),
-                //     ),
-                //     trailing: Radio(
-                //       value: 'Credit Card',
-                //       groupValue: selectedOption,
-                //       onChanged: (value) {
-                //         setState(() {
-                //           selectedOption = value as String;
-                //         });
-                //       },
-                //     ),
-                //     visualDensity: VisualDensity(vertical: 4),
-                //     shape: RoundedRectangleBorder(
-                //       //side: BorderSide(color: Colors.black, width: 1),
-                //       borderRadius: BorderRadius.circular(20),
-                //     ),
-                //   ),
-                // ),
+
                 Text(
                   'Payment Method',
                   style: TextStyle(

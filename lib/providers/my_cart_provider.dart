@@ -73,45 +73,4 @@ class MyCartProvider extends ChangeNotifier {
 
     notifyListeners();
   }
-
-  // Future<void> deleteDocumentByValue(String name, dynamic value) async {
-  //   try {
-  //     await FirebaseFirestore.instance
-  //         .collection('cart')
-  //         .where(name, isEqualTo: value)
-  //         .get()
-  //         .then((QuerySnapshot querySnapshot) {
-  //       querySnapshot.docs.forEach((doc) async {
-  //         await FirebaseFirestore.instance
-  //             .collection('cart')
-  //             .doc(doc.id)
-  //             .delete();
-  //       });
-  //     });
-
-  //     print('Documents removed from Cart successfully!');
-  //   } catch (e) {
-  //     print('Error removing documents from Cart: $e');
-  //   }
-  // }
 }
-
-///notifyListeners();
-    //   Future<void> deleteDocumentByValue(String name , dynamic value) async {
-//   try {
-//     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-//         .collection('cart')
-//         .where(name, isEqualTo: value)
-//         .get();
-//     querySnapshot.docs.forEach((doc) async {
-//       await FirebaseFirestore.instance
-//           .collection('cart')
-//           .doc(doc.id)
-//           .delete();
-//     });
-
-//     print('Documents removed from Favorites successfully!');
-//   } catch (e) {
-//     print('Error removing documents from Favorites: $e');
-//   }
-// }

@@ -2,8 +2,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mirror_me_app/cubits/auth_cubit/cubit/auth_cubit.dart';
-import 'package:mirror_me_app/cubits/search_cubit/cubit/search_cubit.dart';
 import 'package:mirror_me_app/firebase_options.dart';
 import 'package:mirror_me_app/providers/favorites_provider.dart';
 import 'package:mirror_me_app/providers/my_cart_provider.dart';
@@ -60,13 +58,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AuthCubit()),
-        //BlocProvider(create: (context) => HomeCubit()),
-        BlocProvider(create: (context) => SearchCubit()),
         ChangeNotifierProvider(create: (context) => FavoritesProvider()),
         ChangeNotifierProvider(create: (context) => MyCartProvider()),
         ChangeNotifierProvider(create: (context) => MyOrderProvider()),
-        // BlocProvider(create: (context) => ProductsOfCategoryCubit()),
       ],
       child: MaterialApp(
         routes: {

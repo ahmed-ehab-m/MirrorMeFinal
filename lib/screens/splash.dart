@@ -12,14 +12,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  // void initState() {
-  //   super.initState();
-  //   Future.delayed(const Duration(seconds: 1), () {
-  //     Navigator.pushReplacement(context,
-  //         MaterialPageRoute(builder: (context) => const WelcomeScreen()));
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,46 +31,6 @@ class _SplashScreenState extends State<SplashScreen> {
           duration: 1500,
         ),
       ),
-      // body: Stack(
-      //   children: [
-      //     Row(
-      //       children: [
-      //         const Spacer(),
-      //         Image.asset('images/Ellipse 31.png'),
-      //       ],
-      //     ),
-      //     Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       // crossAxisAlignment: CrossAxisAlignment.center,
-      //       children: [
-      //         Center(
-      //           child: Text('Mirror',
-      //               style: TextStyle(
-      //                 fontSize: 80,
-      //                 color: col,
-      //                 fontWeight: FontWeight.w400,
-      //                 fontFamily: 'MiltonianTattoo',
-      //               ),
-      //               textAlign: TextAlign.center),
-      //         ),
-      //         Text(
-      //           'Me',
-      //           style: TextStyle(
-      //             fontSize: 80,
-      //             color: col,
-      //             fontWeight: FontWeight.w400,
-      //             fontFamily: 'MiltonianTattoo',
-      //           ),
-      //           textAlign: TextAlign.center,
-      //         ),
-      //       ],
-      //     ),
-      //     Align(
-      //       child: Image.asset('images/Ellipse 31 (1).png'),
-      //       alignment: Alignment.bottomLeft,
-      //     ),
-      //   ],
-      // )),
     );
   }
 }

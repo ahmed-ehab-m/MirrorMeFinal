@@ -185,37 +185,6 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
           ),
-          // if (_recentSearches.isNotEmpty)
-          //   Padding(
-          //     padding: const EdgeInsets.all(16.0),
-          //     child: Row(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Column(
-          //           mainAxisSize: MainAxisSize.min,
-          //           crossAxisAlignment: CrossAxisAlignment.start,
-          //           // mainAxisAlignment: MainAxisAlignment.start,
-          //           children: [
-          //             Text('Recent Searches:',
-          //                 style: TextStyle(
-          //                     fontWeight: FontWeight.bold,
-          //                     color: kPrimaryColor)),
-          //             for (String search in _recentSearches)
-          //               GestureDetector(
-          //                 onTap: () {
-          //                   _searchController.text = search;
-          //                   _searchProducts(search);
-          //                 },
-          //                 child: Padding(
-          //                   padding: const EdgeInsets.symmetric(vertical: 4.0),
-          //                   child: Text(search),
-          //                 ),
-          //               ),
-          //           ],
-          //         ),
-          //       ],
-          //     ),
-          //   ),
         ],
       ),
     );

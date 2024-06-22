@@ -34,13 +34,3 @@ class Productone {
     );
   }
 }
-
-// Future<List<Productone>> getTshirts() async {
-//   List<Productone> tshirts = [];
-//   QuerySnapshot querySnapshot =
-//       await FirebaseFirestore.instance.collection('tshirtone').get();
-//   querySnapshot.docs.forEach((doc) {
-//     tshirts.add(Productone.fromMap(doc.data() as Map<String, dynamic>));
-//   });
-//   return tshirts;
-// }

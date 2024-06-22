@@ -11,7 +11,6 @@ class ItemsPage extends StatefulWidget {
   ItemsPage({super.key});
   static const String id = 'ItemsPage';
 
-
   @override
   State<ItemsPage> createState() => _ItemsPageState();
 }
@@ -20,9 +19,9 @@ class _ItemsPageState extends State<ItemsPage> {
   @override
   Widget build(BuildContext context) {
     String? categoryName;
-  List<Productone> products = [];
-  bool isloading = false;
-  categoryName = ModalRoute.of(context)!.settings.arguments as String;
+    List<Productone> products = [];
+    bool isloading = false;
+    categoryName = ModalRoute.of(context)!.settings.arguments as String;
 
     final String itemName =
         ModalRoute.of(context)!.settings.arguments as String;
@@ -96,40 +95,6 @@ class _ItemsPageState extends State<ItemsPage> {
         ),
         backgroundColor: Colors.white,
       ),
-      // body: GridView.builder(
-      //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      //       crossAxisCount: 2,
-      //       crossAxisSpacing: 10,
-
-      //       //childAspectRatio: (itemWidth / itemHeight),
-      //       // childAspectRatio: MediaQuery.of(context).size.width /
-      //       //     (MediaQuery.of(context).size.height / 0.5),
-      //       mainAxisExtent: 300,
-      //     ),
-      //     itemCount: items.length,
-      //     itemBuilder: (context, index) {
-      //       return GestureDetector(
-      //         child: Item(itemModel: items[index]),
-      //         onTap: () {
-      //           setState(() {
-      //             items[index].isFavorite = !items[index].isFavorite;
-      //             Navigator.pushNamed(context, ProdcutPage.id, arguments: {
-      //               'title': items[index].title,
-      //               'image': items[index].image,
-      //               'size': items[index].size,
-      //               'washing': items[index].washingInstructions,
-      //               'length': items[index].length,
-      //               'material': items[index].material,
-      //               'price': items[index].price
-      //             });
-      //           });
-      //         },
-      //       );
-      //     }),
-      // body: ProductsScreenBody(
-      //     future: AllProductsOfCategoryService()
-      //         .getAllProductsOfCategory(categoryName: categoryName!),
-      //   )
     );
   }
 }

@@ -73,29 +73,6 @@ class FavoritesProvider extends ChangeNotifier {
     }
   }
 
-  // Future<void> deleteDocumentByValue(String productName, dynamic value) async {
-  //   try {
-  //     var user = FirebaseAuth.instance.currentUser;
-  //     if (user != null) {
-  //       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-  //           .collection('favorite')
-  //           .where('userId', isEqualTo: user.uid)
-  //           .where(productName, isEqualTo: value)
-  //           .get();
-  //       querySnapshot.docs.forEach((doc) async {
-  //         await FirebaseFirestore.instance
-  //             .collection('favorite')
-  //             .doc(doc.id)
-  //             .delete();
-  //         _productsList.removeWhere((product) => product.id == doc.id);
-  //       });
-  //       print('Documents removed from Favorites successfully!');
-  //     }
-  //   } catch (e) {
-  //     print('Error removing documents from Favorites: $e');
-  //   }
-  // }
-
   void removeProduct(Productone product) async {
     var user = FirebaseAuth.instance.currentUser;
     if (user != null) {
