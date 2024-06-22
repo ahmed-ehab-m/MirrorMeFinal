@@ -51,6 +51,7 @@ class _TwoPageState extends State<TwoPage> {
                   name: doc['name'],
                   price: doc['price'],
                   image: doc['image'], Adress: '', phone: '', username: '',
+                  amount: 1,
                   // amount: 0,
                 ));
               });

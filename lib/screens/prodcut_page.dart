@@ -54,7 +54,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
     // }
 
     Future<void> addToCart(
-        String productName, int price, String imageUrl) async {
+        String productName, int price, String imageUrl, int amount) async {
       try {
         var user = FirebaseAuth.instance.currentUser;
         if (user != null) {
@@ -63,6 +63,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
             'name': productName,
             'price': price,
             'image': imageUrl,
+            'amount': amount
           });
           print('Product added to cart successfully!');
         }
@@ -265,7 +266,6 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                     quantity -= 1;
                                     if (quantity <= 0) {
                                       quantity = 1;
-                                      widget.p1.amount = quantity;
                                     }
 
                                     //  widget.p1.amount=ProdcutPage.quantity ;
@@ -283,7 +283,6 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                 onPressed: () {
                                   setState(() {
                                     quantity += 1;
-                                    widget.p1.amount = quantity;
                                   });
                                 },
                                 icon: const Icon(Icons.add),
@@ -313,8 +312,11 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                       ),
                                       onPressed: () {
                                         // provider.addItem(widget.p1);
-                                        addToCart(widget.p1.name,
-                                            widget.p1.price, widget.p1.image);
+                                        addToCart(
+                                            widget.p1.name,
+                                            widget.p1.price,
+                                            widget.p1.image,
+                                            widget.p1.amount = quantity);
 
                                         Navigator.pushNamed(
                                             context, CartScreen.ids,

@@ -43,6 +43,8 @@ class _FourPageState extends State<FourPage> {
                   name: doc['name'],
                   price: doc['price'],
                   image: doc['image'],
+                  amount: 1,
+
                   Adress: '',
                   phone: '',
                   username: '',

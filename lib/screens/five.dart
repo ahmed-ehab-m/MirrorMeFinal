@@ -46,7 +46,7 @@ class _FivePageState extends State<FivePage> {
                   image: doc['image'],
                   Adress: '',
                   phone: '',
-                  username: '',
+                  username: '', amount: 1,
                   // amount: 0,
                 ));
               });

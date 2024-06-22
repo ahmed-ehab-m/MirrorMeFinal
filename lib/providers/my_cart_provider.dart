@@ -8,6 +8,7 @@ import '../widgets/List_item_widget.dart';
 class MyCartProvider extends ChangeNotifier {
   List<Productone> _productList = [];
   int totalPrice = 0;
+  int amount = 0;
   List<Productone> get productList => _productList;
   int? add_item(List<Productone> productList, int? quantity) {
     int? total = 0;
@@ -37,6 +38,7 @@ class MyCartProvider extends ChangeNotifier {
               Adress: '',
               phone: '',
               username: '',
+              amount: amount,
             ),
           );
         }

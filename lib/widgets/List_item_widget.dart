@@ -185,13 +185,13 @@ class ListItemWidget extends StatefulWidget {
       required this.product,
       required this.animation,
       required this.onclick,
-      this.amount,
+      // this.amount,
       this.totalPrice}) {}
 
   Productone product;
   final Animation<double> animation;
   final VoidCallback? onclick;
-  int? amount;
+  // int? amount;
   double? totalPrice;
   @override
   State<ListItemWidget> createState() => _ListItemWidgetState();

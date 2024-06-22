@@ -257,6 +257,8 @@ class _SignInState extends State<SignIn> {
                 ElevatedButton(
                   onPressed: () {
                     signIn(emailController.text, passController.text, context);
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   child: const Center(
                     child: Text(

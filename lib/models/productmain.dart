@@ -8,7 +8,7 @@ class Productone {
   final String phone;
   final String username;
   final String id;
-  int? amount;
+  int amount;
 
   Productone({
     required this.name,
@@ -18,7 +18,7 @@ class Productone {
     required this.Adress,
     required this.phone,
     required this.username,
-    this.amount,
+    required this.amount,
   });
 
   factory Productone.fromMap(Map<String, dynamic> map) {

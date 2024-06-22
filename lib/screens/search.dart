@@ -83,6 +83,7 @@ class _SearchPageState extends State<SearchPage> {
     for (QuerySnapshot querySnapshot in querySnapshots) {
       for (DocumentSnapshot doc in querySnapshot.docs) {
         results.add(Productone(
+          amount: 1,
           id: doc.id,
           name: doc['name'],
           price: doc['price'],
