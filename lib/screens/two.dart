@@ -4,7 +4,6 @@ import 'package:mirror_me_app/models/itemModel.dart';
 import 'package:mirror_me_app/models/product.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 import 'package:mirror_me_app/screens/prodcut_page.dart';
-import 'package:mirror_me_app/services/get_products_of_category.dart';
 import 'package:mirror_me_app/widgets/custom_card.dart';
 import 'package:mirror_me_app/widgets/items/item.dart';
 import 'package:mirror_me_app/widgets/products_screens_body.dart';
@@ -19,6 +18,31 @@ class TwoPage extends StatefulWidget {
 class _TwoPageState extends State<TwoPage> {
   @override
   Widget build(BuildContext context) {
+    List<String> passes = [
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+      'C:\Users\jamal\Downloads\MirrorMe2-main-main (1)\MirrorMe2-main-main\images\1.jpg',
+    ];
+
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -51,7 +75,6 @@ class _TwoPageState extends State<TwoPage> {
                   name: doc['name'],
                   price: doc['price'],
                   image: doc['image'], Adress: '', phone: '', username: '',
-                  amount: 1,
                   // amount: 0,
                 ));
               });
@@ -68,6 +91,7 @@ class _TwoPageState extends State<TwoPage> {
                     // BlocProvider.of<HomeCubit>(context).displayProductsHome();
                     return CustomCard(
                       product: products[index],
+                      pass: passes[0],
                     );
                   });
             } else {
@@ -81,3 +105,173 @@ class _TwoPageState extends State<TwoPage> {
         ));
   }
 }
+// body: GridView.builder(
+//     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//       crossAxisCount: 2,
+//       crossAxisSpacing: 10,
+
+//       //childAspectRatio: (itemWidth / itemHeight),
+//       // childAspectRatio: MediaQuery.of(context).size.width /
+//       //     (MediaQuery.of(context).size.height / 0.5),
+//       mainAxisExtent: 300,
+//     ),
+//     itemCount: items.length,
+//     itemBuilder: (context, index) {
+//       return GestureDetector(
+//         child: Item(itemModel: items[index]),
+//         onTap: () {
+//           setState(() {
+//             items[index].isFavorite = !items[index].isFavorite;
+//             Navigator.pushNamed(context, ProdcutPage.id, arguments: {
+//               'title': items[index].title,
+//               'image': items[index].image,
+//               'size': items[index].size,
+//               'washing': items[index].washingInstructions,
+//               'length': items[index].length,
+//               'material': items[index].material,
+//               'price': items[index].price
+//             });
+//           });
+//         },
+//       );
+//     }),
+
+//   String? categoryName;
+// List<Product> products = [];
+// bool isloading = false;
+// categoryName = ModalRoute.of(context)!.settings.arguments as String;
+
+// final String itemName =
+//     ModalRoute.of(context)!.settings.arguments as String;
+// final List<ItemModel> items = [
+//   ItemModel(
+//       image: 'images/homePage/shirt (3).jpeg',
+//       title: ' lu Sweatshirt ',
+//       price: ' \$ 85',
+//       size: 'M',
+//       length: '14 in',
+//       material: '100% Cotton',
+//       washingInstructions: 'Machine wash cold'),
+//   ItemModel(
+//       image: 'images/homePage/shirt (3).jpeg',
+//       title: ' lu Sweatshirt ',
+//       price: ' \$ 85',
+//       size: 'M',
+//       length: '14 in',
+//       material: '100% Cotton',
+//       washingInstructions: 'Machine wash cold'),
+//   ItemModel(
+//       image: 'images/homePage/shirt (3).jpeg',
+//       title: ' lu Sweatshirt ',
+//       price: '\$  85',
+//       size: 'M',
+//       length: '14 in',
+//       material: '100% Cotton',
+//       washingInstructions: 'Machine wash cold'),
+//   ItemModel(
+//       image: 'images/homePage/shirt (3).jpeg',
+//       title: ' lu Sweatshirt ',
+//       price: '\$ 85',
+//       size: 'M',
+//       length: '14 in',
+//       material: '100% Cotton',
+//       washingInstructions: 'Machine wash cold'),
+//   ItemModel(
+//       image: 'images/homePage/shirt (3).jpeg',
+//       title: ' lu Sweatshirt ',
+//       price: '\$  85',
+//       size: 'M',
+//       length: '14 in',
+//       material: '100% Cotton',
+//       washingInstructions: 'Machine wash cold'),
+//   ItemModel(
+//       image: 'images/homePage/shirt (3).jpeg',
+//       title: ' lu Sweatshirt ',
+//       price: '\$  85',
+//       size: 'M',
+//       length: '14 in',
+//       material: '100% Cotton',
+//       washingInstructions: 'Machine wash cold'),
+// ];
+
+/*StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('tshirtone').snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          if (snapshot.hasData && snapshot.data != null) {
+            List<Productone> products = [];
+            snapshot.data?.docs!.forEach((element) {
+              products.add(Productone(
+                  name: element['name'],
+                  price: element['price'],
+                  image: element['image'])); 
+            });
+          }
+          List<DocumentSnapshot> docs = snapshot.data!.docs;
+          return SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 30),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                  // childAspectRatio: 0.75,
+                ),
+                shrinkWrap: true,
+                //    physics: NeverScrollableScrollPhysics(),
+                itemCount: docs.length,
+                itemBuilder: (context, index) {
+                  Map<String, dynamic> data =
+                      docs[index].data() as Map<String, dynamic>;
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, ProdcutPage.id, arguments: {
+                        'image': docs[index]['image'],
+                        'name': docs[index]['name'],
+                        'price': docs[index]['price'],
+                      }
+                          // MaterialPageRoute(
+                          //     builder: (context) => ProdcutPage())
+                          );
+                    },
+                    child: Container(
+                      color: Colors.grey[300],
+                      height: 100,
+                      width: 100,
+                      child: ClipRRect(
+                        // borderRadius: BorderRadius.circular(35),
+                        child: Column(
+                          children: [
+                            Expanded(
+                                flex: 7,
+                                child: Image.network(
+                                  data['image'],
+                                  fit: BoxFit.cover,
+                                )),
+                            Expanded(
+                              flex: 3,
+                              child: Text(data['name'] ?? 'name not available'),
+                            ),
+                            Expanded(
+                              flex: 3,
+                              child:
+                                  Text(data['price'] ?? 'Price not available'),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //
+                      //Text('\$${data['price']}'),
+                    ),
+                  );
+                },
+              ),
+            ),
+          );
+        },
+      ),*/

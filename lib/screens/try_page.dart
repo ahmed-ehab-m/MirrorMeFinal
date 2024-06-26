@@ -1,9 +1,29 @@
+// import 'package:flutter/material.dart';
+
+// class TryPage extends StatefulWidget {
+//   const TryPage({super.key});
+
+//   @override
+//   State<TryPage> createState() => _TryPageState();
+// }
+
+// class _TryPageState extends State<TryPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Image.asset('images/TESTING.jpg'),
+//       )
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 import 'package:mirror_me_app/constants.dart';
 
 class TryPage extends StatefulWidget {
   const TryPage({super.key});
-  static String id = 'TryPage';
+  static const String id = 'TryPage';
 
   @override
   State<TryPage> createState() => _TryPageState();
@@ -38,9 +58,8 @@ class _TryPageState extends State<TryPage> {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Image.asset(
-                'images/model555.png',
-                height: 5000,
-                width: 2000,
+                'images/TESTING1.jpg',
+                fit: BoxFit.fill,
               ),
             ),
           ),

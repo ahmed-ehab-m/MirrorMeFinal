@@ -10,9 +10,9 @@ import 'package:provider/provider.dart';
 import '../constants.dart';
 
 class CustomCard extends StatefulWidget {
-  CustomCard({super.key, required this.product});
+  CustomCard({super.key, required this.product, this.pass});
   final Productone product;
-
+  String? pass;
   @override
   State<CustomCard> createState() => _CustomCardState();
 }
@@ -79,6 +79,7 @@ class _CustomCardState extends State<CustomCard> {
           MaterialPageRoute(
             builder: ((context) => ProdcutPage(
                   p1: widget.product,
+                  pass: widget.pass,
                 )),
           ),
         );

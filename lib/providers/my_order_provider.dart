@@ -30,7 +30,7 @@ class MyOrderProvider extends ChangeNotifier {
               Adress: element.get('Adress'),
               phone: element.get('phone'),
               username: element.get('username'),
-              amount: 1,
+              // amount: 1,
             ),
           );
         }

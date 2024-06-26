@@ -45,7 +45,7 @@ class _oneState extends State<one> {
                   price: doc['price'],
                   image: doc['image'],
                   Adress: '',
-                  amount: 1,
+                  // amount: 1,
                   phone: '',
                   username: '',
                   // amount: 0,

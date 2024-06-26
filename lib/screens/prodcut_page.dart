@@ -2,19 +2,31 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:mirror_me_app/constants.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 import 'package:mirror_me_app/providers/my_cart_provider.dart';
 import 'package:mirror_me_app/screens/cart_screen.dart';
+import 'package:mirror_me_app/screens/three.dart';
+import 'package:mirror_me_app/screens/try2.dart';
+import 'package:mirror_me_app/screens/try3.dart';
+
 import 'package:mirror_me_app/screens/try_page.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'dart:io';
+import 'package:http/http.dart' as http;
 
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class ProdcutPage extends StatefulWidget {
-  ProdcutPage({Key? key, required this.p1});
+  ProdcutPage({Key? key, required this.p1, this.pass});
   static const String id = 'ProdcutPage';
   final Productone p1;
+  String? pass;
   // static int quantity = 1;
 
   @override
@@ -38,7 +50,39 @@ class _ProdcutPageState extends State<ProdcutPage> {
   int selectedIndexColor = -1;
   String resultSize = '';
   String? resultColor;
+  void tryOn() async {
+    String apiUrl =
+        'http://10.0.2.2:5000/tryon'; // تعديل هنا على حسب عنوان Flask app الخاص بك
 
+    Map<String, String> headers = {
+      "Content-type": "application/json",
+    };
+
+    Map<String, dynamic> data = {
+      "personImage":
+          'C:\Users\jamal\Desktop\DM-VTON555555\VITON-Clean\VITON_traindata\train_img\000068_0.jpg',
+      // "clothImage": widget.pass,
+      "clothImage": widget.pass,
+    };
+
+    http.Response response = await http.post(
+      Uri.parse(apiUrl),
+      headers: headers,
+      body: jsonEncode(data), // تحويل البيانات إلى JSON قبل إرسالها
+    );
+
+    if (response.statusCode == 200) {
+      print('Try-on request sent successfully!');
+    } else {
+      print('Error during try-on request: ${response.statusCode}');
+    }
+  }
+
+  final List<String> pageRoutes2 = [
+    TryPage.id,
+    TryPage2.id,
+    TryPage3.id,
+  ];
   Widget build(BuildContext context) {
     // Future<void> addToCart(String name, String price, String image) async {
     //   try {
@@ -54,7 +98,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
     // }
 
     Future<void> addToCart(
-        String productName, int price, String imageUrl, int amount) async {
+        String productName, int price, String imageUrl) async {
       try {
         var user = FirebaseAuth.instance.currentUser;
         if (user != null) {
@@ -63,7 +107,6 @@ class _ProdcutPageState extends State<ProdcutPage> {
             'name': productName,
             'price': price,
             'image': imageUrl,
-            'amount': amount
           });
           print('Product added to cart successfully!');
         }
@@ -88,11 +131,9 @@ class _ProdcutPageState extends State<ProdcutPage> {
       'red': Colors.red,
     };
     final List<String> models = [
-      'images/model66.png',
-      'images/model1.jpg',
-      'images/model2.jpg',
-      'images/model3.jpg',
-      'images/model4.jpg'
+      'images/000262_0.jpg',
+      'images/000283_0.jpg',
+      'images/000429_0.jpg',
     ];
     return Scaffold(
         backgroundColor: Color(0xfff6f6f6),
@@ -313,10 +354,10 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                       onPressed: () {
                                         // provider.addItem(widget.p1);
                                         addToCart(
-                                            widget.p1.name,
-                                            widget.p1.price,
-                                            widget.p1.image,
-                                            widget.p1.amount = quantity);
+                                          widget.p1.name,
+                                          widget.p1.price,
+                                          widget.p1.image,
+                                        );
 
                                         Navigator.pushNamed(
                                             context, CartScreen.ids,
@@ -324,7 +365,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                               // 'image': image,
                                               // 'name': name,
                                               // 'price': price,
-                                              'quantity': widget.p1.amount,
+                                              'quantity': quantity,
                                               'resultColor': resultColor,
                                               'resultSize': resultSize,
                                               'productone': widget.p1,
@@ -359,6 +400,9 @@ class _ProdcutPageState extends State<ProdcutPage> {
                               SizedBox(
                                 height: 50,
                                 child: ElevatedButton(
+                                  // onPressed: () {
+                                  //   tryOn();
+                                  // },
                                   onPressed: () {
                                     showGeneralDialog(
                                         context: context,
@@ -387,7 +431,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                                     Expanded(
                                                       child: Container(
                                                         child: GridView.builder(
-                                                          itemCount: 5,
+                                                          itemCount: 3,
                                                           gridDelegate:
                                                               SliverGridDelegateWithFixedCrossAxisCount(
                                                             crossAxisCount: 2,
@@ -399,12 +443,12 @@ class _ProdcutPageState extends State<ProdcutPage> {
                                                               (context, index) {
                                                             return GestureDetector(
                                                               onTap: () {
-                                                                Navigator.pushReplacement(
+                                                                // tryOn();
+
+                                                                Navigator.pushNamed(
                                                                     context,
-                                                                    MaterialPageRoute(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                TryPage()));
+                                                                    pageRoutes2[
+                                                                        index]);
                                                               },
                                                               child: Container(
                                                                 width: 100,
@@ -516,7 +560,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                 Row(
                   children: [
                     GestureDetector(
-                      child: Image.network(widget.p1.image,
+                      child: Image.asset('images/adi.jpeg',
                           width: 190, height: 190),
                       onTap: () {
                         // Navigator.push(
@@ -526,7 +570,7 @@ class _ProdcutPageState extends State<ProdcutPage> {
                         //             ProdcutPage(p1: widget.p1))));
                       },
                     ),
-                    Image.network(widget.p1.image, width: 150, height: 190),
+                    Image.asset('images/adi2.jpeg', width: 150, height: 190),
                   ],
                 ),
               ],

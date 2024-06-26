@@ -169,7 +169,6 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                           width: 85,
                         ),
                         Text(
-                          //product[index].amount.toString() ,
                           '${quantity}',
                           style: TextStyle(
                             fontSize: 18,

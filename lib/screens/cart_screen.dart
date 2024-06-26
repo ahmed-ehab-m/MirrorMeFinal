@@ -79,7 +79,7 @@ class _CartScreenState extends State<CartScreen> {
                         onclick: () {
                           provider.removeItem(index, listkey);
                         },
-                        // amount: productList[index].amount,
+                        amount: quantity,
                       ),
                     ),
                   ),

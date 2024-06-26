@@ -3,7 +3,6 @@ import 'package:mirror_me_app/models/itemModel.dart';
 import 'package:mirror_me_app/models/product.dart';
 import 'package:mirror_me_app/models/productmain.dart';
 import 'package:mirror_me_app/screens/prodcut_page.dart';
-import 'package:mirror_me_app/services/get_products_of_category.dart';
 import 'package:mirror_me_app/widgets/items/item.dart';
 import 'package:mirror_me_app/widgets/products_screens_body.dart';
 

@@ -185,13 +185,13 @@ class ListItemWidget extends StatefulWidget {
       required this.product,
       required this.animation,
       required this.onclick,
-      // this.amount,
+      this.amount,
       this.totalPrice}) {}
 
   Productone product;
   final Animation<double> animation;
   final VoidCallback? onclick;
-  // int? amount;
+  int? amount;
   double? totalPrice;
   @override
   State<ListItemWidget> createState() => _ListItemWidgetState();
@@ -259,7 +259,7 @@ class _ListItemWidgetState extends State<ListItemWidget> {
                           fontWeight: FontWeight.w400),
                     ),
               Text(
-                'Amount : ${widget.product.amount}',
+                'Amount :${widget.amount}',
                 style: const TextStyle(
                     fontSize: 15,
                     color: kPrimaryColor,

@@ -44,7 +44,7 @@ class _ThreePageState extends State<ThreePage> {
                   name: doc['name'],
                   price: doc['price'],
                   image: doc['image'],
-                  amount: 1,
+                  // amount: 1,
 
                   Adress: '',
                   phone: '',

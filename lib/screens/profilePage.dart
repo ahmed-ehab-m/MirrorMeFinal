@@ -86,11 +86,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             // onTap: _uploadImage,
                             child: Center(
                               child: CircleAvatar(
-                                backgroundImage: AssetImage('images/jj.jpg'),
-                                // _imageUrl.isNotEmpty
-                                //     ? FileImage(File(_imageUrl))
-                                //     : AssetImage('images/3_4.jpg')
-                                //         as ImageProvider,
+                                backgroundImage: _imageUrl.isNotEmpty
+                                    ? FileImage(File(_imageUrl))
+                                    : AssetImage('images/profilePic.jpeg')
+                                        as ImageProvider,
                                 radius: 50,
                               ),
                             ),

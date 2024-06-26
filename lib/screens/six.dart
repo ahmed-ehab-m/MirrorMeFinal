@@ -45,7 +45,7 @@ class _SixPageState extends State<SixPage> {
                   price: doc['price'],
                   image: doc['image'],
                   Adress: '',
-                  amount: 1,
+                  // amount: 1,
 
                   phone: '',
                   username: '',

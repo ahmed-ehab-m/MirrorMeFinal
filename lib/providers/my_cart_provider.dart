@@ -14,7 +14,7 @@ class MyCartProvider extends ChangeNotifier {
     int? total = 0;
     quantity == null ? quantity = 1 : quantity = quantity;
     for (var product in productList) {
-      // total = (total! + (product.price * (product.amount==null?1:product.amount)))!;
+      total = (total! + (product.price * quantity))!;
     }
     return total;
   }
@@ -38,7 +38,7 @@ class MyCartProvider extends ChangeNotifier {
               Adress: '',
               phone: '',
               username: '',
-              amount: amount,
+              // amount: amount,
             ),
           );
         }

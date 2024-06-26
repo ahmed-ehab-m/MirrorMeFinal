@@ -26,7 +26,7 @@ class FavoritesProvider extends ChangeNotifier {
               Adress: '',
               phone: '',
               username: '',
-              amount: 1,
+              // amount: 1,
             ),
           );
         }

@@ -98,7 +98,7 @@ class _SuccussfulOrderState extends State<SuccussfulOrder> {
                       'phonNo': phoneNo,
                       'userAdress': userAddress,
                       'total': totalprice,
-                      'quantity': quantity
+                      'quantity': quantity,
                     });
                   },
                   style: ButtonStyle(

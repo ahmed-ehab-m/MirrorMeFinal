@@ -69,7 +69,7 @@ class _MyOrderState extends State<MyOrder> {
                 onclick: () {
                   provider.removeItem(index, listkey);
                 },
-                // amount: quantity,
+                amount: quantity,
                 totalPrice: totalprice,
               ),
             )

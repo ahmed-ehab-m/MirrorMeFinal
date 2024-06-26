@@ -44,7 +44,7 @@ class _SevenPageState extends State<SevenPage> {
                   name: doc['name'],
                   price: doc['price'],
                   image: doc['image'],
-                  amount: 1,
+                  // amount: 1,
 
                   Adress: '',
                   phone: '',
